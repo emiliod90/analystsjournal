@@ -1,0 +1,92 @@
+.about_card {
+  width: 100%;
+  height: 66vh;
+  display: grid;
+  place-items: center;
+}
+
+.cover {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 150px);
+}
+
+@media screen and (min-width: 768px) {
+  .cover {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 225px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cover {
+    /* display: flex; */
+    grid-template-columns: 225px 225px 1fr;
+  }
+}
+
+.image {
+  height: 200px;
+  width: 150px;
+  border-radius: 24px;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .image {
+    height: 300px;
+    width: 225px;
+  }
+}
+
+
+.fade_box {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 170px;
+}
+
+.fade_box_text {
+  padding: 5px;
+}
+
+.image:hover .fade_box {
+  opacity: 1;
+}
+
+.image:hover .about_profile_photo {
+  opacity: 0.6;
+  transition: 0.5s ease;
+  transform: translateY(-80px);
+}
+
+
+.about_profile_photo {
+  border-radius: 24px;
+}
+
+.author_name {
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .author_name {
+    font-size: 1.5rem;
+    padding: 5px 0;
+  }
+}
+
+.author_title {
+  background-color: lightblue;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+
+
