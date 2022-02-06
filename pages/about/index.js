@@ -1,12 +1,12 @@
-import styles from "../styles/about.module.css";
+import styles from "../../styles/about.module.css";
 import Image from "next/image";
-import AboutImage from "../public/welcomeClip.png";
-import HoverCard from "../components/cards/hoverCard";
-import TitleCard from "../components/cards/titleCard";
+import AboutImage from "../../public/welcomeClip.png";
+import HoverCard from "../../components/cards/hoverCard";
+import TitleCard from "../../components/cards/titleCard";
 //https://codepen.io/2975/pen/QrZpoa
 //https://freefrontend.com/css-profile-cards/
 
-function Projects() {
+function About() {
   return (
     <>
       <div className={styles.about_card}>
@@ -28,7 +28,7 @@ function Projects() {
             }
           />
           <TitleCard
-            title={"Tutorials"}
+            title={"About"}
             one={
               "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/rizky-subagja-ZfVEWZTHs8M-unsplash.jpg"
             }
@@ -106,4 +106,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default About;

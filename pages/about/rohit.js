@@ -1,7 +1,7 @@
 import Image from "next/image";
-import HoverCard from "../components/cards/hoverCard";
-import ProfileCard from "../components/cards/profileCard";
-import TitleCard from "../components/cards/titleCard";
+import HoverCard from "../../components/cards/hoverCard";
+import ProfileCard from "../../components/cards/profileCard";
+import TitleCard from "../../components/cards/titleCard";
 function Rohit() {
   return (
     <>
