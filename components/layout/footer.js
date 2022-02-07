@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       className={styles.footer}
-      style={{ background: theme.background.shadeTwo }}
+      style={{ background: "rgb(38, 50, 56)" }}
     >
       <div
         className={styles.footer_inner}

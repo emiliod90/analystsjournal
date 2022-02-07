@@ -1,11 +1,13 @@
 import Tag from "../../components/tag";
+import Link from "next/link";
 
 function Resources() {
   return (
     <>
       <div className="container">
+        
         <h1>Resources</h1>
-        <h3>Home &gt; Resources</h3>
+        <Link href={"/"}><a><h3>Home &gt; Resources</h3></a></Link>
 
         <Tag title={"Tutorials"} background={"rgba(51, 181, 229, 0.4)"}>
           <svg

@@ -2,9 +2,22 @@ import Head from "next/head";
 import Image from "next/image";
 import { SmallBtn } from "../components/buttons/buttons";
 import styles from "../styles/Home.module.css";
+import { motion } from "framer-motion";
+import Section from "../components/section";
+import Link from "next/link";
 //https://codepen.io/andybarefoot/pen/wrXvLj
 //https://www.w3schools.com/cssref/sel_selection.asp
 // https://stackoverflow.com/questions/16094837/what-is-the-browser-default-background-color-when-selecting-text
+
+const tasks = {
+  backlog: [
+    { id: 1, task: "Make data governance notes" },
+    { id: 2, task: "Pass the Azure Developer Test" },
+    { id: 3, task: "Setup Spark/PySpark Docker env" },
+  ],
+  active: [{ id: 1, task: "Complete the 'onboarding' guide" }],
+  complete: [{ id: 2, task: "Complete Analysts Journal" }],
+};
 
 export default function Home() {
   return (
@@ -23,11 +36,16 @@ export default function Home() {
           <div className={styles.box_five}></div>
         </div>
         <div className={styles.box_six}>
-          <div className={styles.title_text}>
+          <motion.div
+            className={styles.title_text}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={({ duration: 0.8 }, 0.1)}
+          >
             The Analysts
             <br />
             Journal
-          </div>
+          </motion.div>
         </div>
       </div>
       <div>
@@ -48,11 +66,15 @@ export default function Home() {
           </code>
         </p>
       </div>
-      <section className={styles.section}>
+      <Section>
         <div className={styles.description}>
           <h4 style={{ display: "inline-block" }}>Resources & Articles</h4>
           <div style={{ display: "inline-block" }}>
-            <SmallBtn>view all &rarr;</SmallBtn>
+            <SmallBtn>
+              <Link href={"/resources"}>
+                <a>view all &rarr;</a>
+              </Link>
+            </SmallBtn>
           </div>
         </div>
         <div className={styles.grid}>
@@ -88,20 +110,40 @@ export default function Home() {
             <p>Tracking personal milestones and other musings, blog style</p>
           </a>
         </div>
-      </section>
-      <section className={styles.section}>
+      </Section>
+      <Section>
         <div className={styles.description}>
           <h4 style={{ display: "inline-block" }}>Kanban</h4>
           <div style={{ display: "inline-block" }}>
-            <SmallBtn background={"rgba(255, 193, 7, 0.4)"} color={"#231E39"}> 📡 Live</SmallBtn>
+            <SmallBtn background={"rgba(255, 193, 7, 0.4)"} color={"#231E39"}>
+              📡 Live
+            </SmallBtn>
           </div>
         </div>
-        <div className={styles.grid}>
-          <div>Upcoming</div>
-          <div>In Prog</div>
-          <div className={styles.complete}>Complete</div>
+        <div className={styles.kanban_grid}>
+          <div className={styles.kanban_card}>
+            <h4 style={{background: "rgb(50, 54, 57)", color: "rgb(251, 251, 249)"}}>⌛ Upcoming</h4>
+            <ul>
+            {tasks.backlog.map((backlog) => (
+              <li key={backlog.id} className={styles.task_item}><p>{backlog.task}</p></li>
+            ))}</ul>
+          </div>
+          <div className={styles.kanban_card}>
+            <h4 style={{background: "#77aaff"}}>✍ In Progress</h4>
+            <ul>
+            {tasks.active.map((active) => (
+              <li key={active.id} className={styles.task_item}><p>{active.task}</p></li>
+            ))}</ul>
+          </div>
+          <div className={styles.kanban_card}>
+            <h4 style={{background: "#66bb6a"}}>✅ Complete</h4>
+            <ul>
+            {tasks.complete.map((complete) => (
+              <li key={complete.id} className={styles.task_item}><p>{complete.task}</p></li>
+            ))}</ul>
+          </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }
