@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, useMemo } from "react";
-import styles from "../../styles/layout.module.css";
+import styles from "./layout.module.css";
 import { ThemeContext, themes } from "../../context/themeContext";
 import Header from "./header";
 import Footer from "./footer";

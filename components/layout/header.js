@@ -1,4 +1,4 @@
-import styles from "../../styles/layout.module.css";
+import styles from "./layout.module.css";
 import Image from "next/image";
 import profilePic from "../../public/people.svg";
 import CogPic from "../../public/cog.svg";

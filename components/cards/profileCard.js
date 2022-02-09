@@ -39,18 +39,24 @@ function ProfileCard({ name, image, location, title, experiences, linkedin }) {
           <div className="btn-grid">
             <SecondaryBtn>Message</SecondaryBtn>
             <a href={linkedin}>
-              <TertiaryBtn><div className="linkedin"><b style={{color:"#fff"}}>in</b></div></TertiaryBtn>
+              <TertiaryBtn>
+                <div className="linkedin">
+                  <b style={{ color: "#fff" }}>in</b>
+                </div>
+              </TertiaryBtn>
             </a>
           </div>
         </div>
-        <div className={styles.card_lower}>
-          <h4 style={{ color: "#B3B8CD" }}>EXPERIENCE</h4>
-          <ul className={styles.skills_list} style={{ color: "#B3B8CD" }}>
-            {experiences.map((experience) => (
-              <li>{experience}</li>
-            ))}
-          </ul>
-        </div>
+        {experiences ? (
+          <div className={styles.card_lower}>
+            <h4 style={{ color: "#B3B8CD" }}>EXPERIENCE</h4>
+            <ul className={styles.skills_list} style={{ color: "#B3B8CD" }}>
+              {experiences.map((experience) => (
+                <li>{experience}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
       <style jsx>{`
         .btn-grid {
