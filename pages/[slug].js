@@ -2,8 +2,9 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { getAllPosts, getPostBySlug } from "../utils/markdownApi";
-import Section from "../components/section";
+import { motion } from "framer-motion";
 import markdownToHTML from "../utils/markdownToHtml";
+import ArticleBody from "../components/article-body";
 // https://blog.nrwl.io/read-and-render-md-files-with-next-js-and-nx-89a85c1d9b44
 // https://github.com/vercel/next.js/blob/canary/examples/blog-starter
 
@@ -21,13 +22,20 @@ export default function Article({ article }) {
             <Head>
               <title>{article.title}</title>
             </Head>
-            <Section>
-              <h1>{article.title}</h1>
-              <h4>{article.date}</h4>
-            </Section>
-            <Section>{article.content}</Section>
+            <motion.div
+              className="article_title"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={({ duration: 0.8 }, 0.1)}
+              style={{ fontSize: "2rem", lineHeight: "2.2rem", margin: "0.5rem 0px" }}
+            >
+              {article.title}
+            </motion.div>
+            <h4>{article.date}</h4>
+            <ArticleBody content={article.content} />
           </>
         )}
+
     </div>
   );
 }

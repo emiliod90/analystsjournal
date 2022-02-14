@@ -1,6 +1,6 @@
 ---
 title: 'My Backlog for 2022'
-date: '2022-02-09T08:32:37Z'
+date: '2022-02-09'
 author:
   name: Emilio D'Souza
 ---
