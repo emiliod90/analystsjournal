@@ -3,18 +3,30 @@
   margin: 0 auto;
 }
 
-.article h1,
-.article h2,
-.article h3 {
+.article h1 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin: 0.5rem 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.article_body h1,
+.article_body h2,
+.article_body h3 {
   margin: 1.5rem 0px;
 }
 
-.article p {
+.article_body p {
   margin: 1.5em 0px;
-  line-height: 1.5;
+  line-height: 1.75;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.article ul, .article ol {
+.article_body ul,
+.article_body ol {
   padding-inline-start: 40px;
   margin-block-start: 1em;
   margin-block-end: 1em;

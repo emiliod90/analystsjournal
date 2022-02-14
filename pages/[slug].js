@@ -22,20 +22,9 @@ export default function Article({ article }) {
             <Head>
               <title>{article.title}</title>
             </Head>
-            <motion.div
-              className="article_title"
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={({ duration: 0.8 }, 0.1)}
-              style={{ fontSize: "2rem", lineHeight: "2.2rem", margin: "0.5rem 0px" }}
-            >
-              {article.title}
-            </motion.div>
-            <h4>{article.date}</h4>
-            <ArticleBody content={article.content} />
+            <ArticleBody content={article.content} title={article.title} date={article.date} />
           </>
         )}
-
     </div>
   );
 }
