@@ -22,7 +22,7 @@ export default function Article({ article }) {
             <Head>
               <title>{article.title}</title>
             </Head>
-            <ArticleBody content={article.content} title={article.title} date={article.date} />
+            <ArticleBody content={article.content} title={article.title} date={article.date} author={article.author.name}/>
           </>
         )}
     </div>
