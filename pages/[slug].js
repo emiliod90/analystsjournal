@@ -18,13 +18,18 @@ export default function Article({ article }) {
       {router.isFallback ? (
         <h3>Loading...</h3>
       ) : (
-          <>
-            <Head>
-              <title>{article.title}</title>
-            </Head>
-            <ArticleBody content={article.content} title={article.title} date={article.date} author={article.author.name}/>
-          </>
-        )}
+        <>
+          <Head>
+            <title>{article.title}</title>
+          </Head>
+          <ArticleBody
+            content={article.content}
+            title={article.title}
+            date={article.date}
+            author={article.author.name}
+          />
+        </>
+      )}
     </div>
   );
 }
@@ -33,34 +38,34 @@ export default function Article({ article }) {
 // page will be pre-rendered with the information returned by the function
 export async function getStaticProps({ params }) {
   const article = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content'
-  ])
-  const content = await markdownToHTML(article.content || '')
+    "title",
+    "date",
+    "slug",
+    "author",
+    "content",
+  ]);
+  const content = await markdownToHTML(article.content || "");
 
   return {
     props: {
       article: {
         ...article,
         content,
-      }
-    }
-  }
+      },
+    },
+  };
 }
 // getStaticPaths - (Static Generation) to specify dynamic routes that get prerendered at build-time.
 export async function getStaticPaths() {
-  const articles = getAllPosts(['slug'])
+  const articles = getAllPosts(["slug"]);
   return {
     paths: articles.map((article) => {
       return {
         params: {
-          slug: article.slug
-        }
-      }
+          slug: article.slug,
+        },
+      };
     }),
-    fallback: false
-  }
+    fallback: false,
+  };
 }
