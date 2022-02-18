@@ -1,6 +1,6 @@
 ---
 title: 'Building Analysts Journal with Next.js'
-date: '2022-13-09T08:32:37Z'
+date: '17 Feb 2022'
 author:
   name: Emilio D'Souza
 ---

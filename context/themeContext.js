@@ -54,8 +54,8 @@ export const themes = {
       h1: "#fff",
       h2: "#fff",
       h3: "#fff",
-      h4: "#fff",
-      p: "#fff",
+      h4: "#333",
+      p: "#333",
     },
     button: {
       primary: "linear-gradient(45deg, #fe6b8b, #ff8e53)",

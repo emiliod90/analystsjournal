@@ -2,22 +2,14 @@
 
 /* Mobile Portrait */
 .container {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-}
-
-/* Mobile Landscape + Standard Tablet Portrait*/
-@media screen and (min-width: 768px) {
-  .container {
-    margin: 0 auto;
-    max-width: 768px;
-  }
 }
 
 /* Standard Tablet Landscape */
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: 800px;
+    max-width: 1024px;
   }
 }
 

@@ -47,6 +47,9 @@ export default function Layout({ children }) {
         p {
           color: ${theme.text.p};
         }
+        ul,ol {
+          color: ${theme.text.p};
+        }
       `}</style>
     </ThemeContext.Provider>
   );

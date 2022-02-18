@@ -1,13 +1,17 @@
 import Tag from "../../components/tag";
 import Link from "next/link";
+import {  getAllPosts } from "../../utils/markdownApi";
 
 function Resources() {
   return (
     <>
       <div className="container">
-        
         <h1>Resources</h1>
-        <Link href={"/"}><a><h3>Home &gt; Resources</h3></a></Link>
+        <Link href={"/"}>
+          <a>
+            <h3>Home &gt; Resources</h3>
+          </a>
+        </Link>
 
         <Tag title={"Tutorials"} background={"rgba(51, 181, 229, 0.4)"}>
           <svg
@@ -48,7 +52,7 @@ function Resources() {
           </svg>
         </Tag>
         <Tag title={"Notes"} background={"#3a3f82"}>
-        <svg
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"
             viewBox="0 0 512 512"
@@ -104,3 +108,18 @@ function Resources() {
 }
 
 export default Resources;
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
+
+  return {
+    props: { allPosts },
+  };
+}
