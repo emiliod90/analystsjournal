@@ -4,6 +4,7 @@ import profilePic from "../../public/people.svg";
 import CogPic from "../../public/cog.svg";
 import { useEffect, useState, useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
+import Link from "next/link";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -18,6 +19,12 @@ export default function Header() {
             🚀 Analysts Journal
           </p>
         </div>
+        <ul style={{listStyle: "none" }} className={styles.header_links}>
+            <li><Link href="blog"><a>Blog</a></Link></li>
+            {/* <li><Link href="courses"><a>Courses</a></Link></li> */}
+            <li><Link href="resources"><a>Resources</a></Link></li>
+            <li><Link href="projects"><a>Projects</a></Link></li>
+          </ul>
         <div style={{ display: "inline-flex" }}>
           <div className={styles.header_circle} onClick={() => toggleTheme()}>
             <svg

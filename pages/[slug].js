@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { getAllPosts, getPostBySlug } from "../utils/markdownApi";
-import { motion } from "framer-motion";
 import markdownToHTML from "../utils/markdownToHtml";
 import ArticleBody from "../components/article-body";
 // https://blog.nrwl.io/read-and-render-md-files-with-next-js-and-nx-89a85c1d9b44
@@ -18,18 +17,18 @@ export default function Article({ article }) {
       {router.isFallback ? (
         <h3>Loading...</h3>
       ) : (
-        <>
-          <Head>
-            <title>{article.title}</title>
-          </Head>
-          <ArticleBody
-            content={article.content}
-            title={article.title}
-            date={article.date}
-            author={article.author.name}
-          />
-        </>
-      )}
+          <>
+            <Head>
+              <title>{article.title}</title>
+            </Head>
+            <ArticleBody
+              content={article.content}
+              title={article.title}
+              date={article.date}
+              author={article.author.name}
+            />
+          </>
+        )}
     </div>
   );
 }
