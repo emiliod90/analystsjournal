@@ -1,10 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import { SmallBtn } from "../components/buttons/buttons";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import Section from "../components/section";
 import Link from "next/link";
+import ArticleCard from "../components/cards/articleCard";
+import { getAllPosts } from "../utils/markdownApi";
+import moment from "moment";
+
 //https://codepen.io/andybarefoot/pen/wrXvLj
 //https://www.w3schools.com/cssref/sel_selection.asp
 // https://stackoverflow.com/questions/16094837/what-is-the-browser-default-background-color-when-selecting-text
@@ -19,7 +22,11 @@ const tasks = {
   complete: [{ id: 2, task: "Complete Analysts Journal" }],
 };
 
-export default function Home() {
+export default function Home({ allPosts }) {
+  const article = allPosts[0]
+  const articles = allPosts.slice(0,4)
+  console.log(moment().format(article.date))
+  console.log(articles)
   return (
     <div>
       <Head>
@@ -66,6 +73,23 @@ export default function Home() {
           </code>
         </p>
       </div>
+      <Section>
+        <div>
+          <div>
+            <p>
+              Interested in Business Analysis, Product Development or Service
+              Design?Trying to improve your overall game?
+            </p>
+            <p>Interested in learning more about </p>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <div className={styles.grid}>
+          <ArticleCard page={article.slug} title={article.title} date={article.date} />
+
+        </div>
+      </Section>
       <Section>
         <div className={styles.description}>
           <h4 style={{ display: "inline-block" }}>Resources & Articles</h4>
@@ -122,28 +146,52 @@ export default function Home() {
         </div>
         <div className={styles.kanban_grid}>
           <div className={styles.kanban_card}>
-            <h4 style={{background: "rgb(50, 54, 57)", color: "rgb(251, 251, 249)"}}>⌛ Upcoming</h4>
+            <h4
+              style={{
+                background: "rgb(50, 54, 57)",
+                color: "rgb(251, 251, 249)",
+              }}
+            >
+              ⌛ Upcoming
+            </h4>
             <ul>
-            {tasks.backlog.map((backlog) => (
-              <li key={backlog.id} className={styles.task_item}><p>{backlog.task}</p></li>
-            ))}</ul>
+              {tasks.backlog.map((backlog) => (
+                <li key={backlog.id} className={styles.task_item}>
+                  <p>{backlog.task}</p>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={styles.kanban_card}>
-            <h4 style={{background: "#77aaff"}}>✍ In Progress</h4>
+            <h4 style={{ background: "#77aaff" }}>✍ In Progress</h4>
             <ul>
-            {tasks.active.map((active) => (
-              <li key={active.id} className={styles.task_item}><p>{active.task}</p></li>
-            ))}</ul>
+              {tasks.active.map((active) => (
+                <li key={active.id} className={styles.task_item}>
+                  <p>{active.task}</p>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={styles.kanban_card}>
-            <h4 style={{background: "#66bb6a"}}>✅ Complete</h4>
+            <h4 style={{ background: "#66bb6a" }}>✅ Complete</h4>
             <ul>
-            {tasks.complete.map((complete) => (
-              <li key={complete.id} className={styles.task_item}><p>{complete.task}</p></li>
-            ))}</ul>
+              {tasks.complete.map((complete) => (
+                <li key={complete.id} className={styles.task_item}>
+                  <p>{complete.task}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </Section>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts(["title", "date", "slug"]);
+
+  return {
+    props: { allPosts },
+  };
 }

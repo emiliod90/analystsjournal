@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { getAllPosts, getPostBySlug } from "../utils/markdownApi";
-import markdownToHTML from "../utils/markdownToHtml";
-import ArticleBody from "../components/article-body";
+import { getAllPosts, getPostBySlug } from "../../utils/markdownApi";
+import markdownToHTML from "../../utils/markdownToHtml";
+import ArticleBody from "../../components/article-body";
 // https://blog.nrwl.io/read-and-render-md-files-with-next-js-and-nx-89a85c1d9b44
 // https://github.com/vercel/next.js/blob/canary/examples/blog-starter
 
