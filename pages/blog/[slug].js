@@ -41,6 +41,7 @@ export async function getStaticProps({ params }) {
     "date",
     "slug",
     "author",
+    "image",
     "content",
   ]);
   const content = await markdownToHTML(article.content || "");

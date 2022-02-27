@@ -1,32 +1,29 @@
 import Head from "next/head";
-import { SmallBtn } from "../components/buttons/buttons";
+import {
+  PrimaryBtn,
+  SecondaryBtn,
+  SmallBtn,
+} from "../components/buttons/buttons";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import Section from "../components/section";
 import Link from "next/link";
 import ArticleCard from "../components/cards/articleCard";
+import HoverCard from "../components/cards/hoverCard";
 import { getAllPosts } from "../utils/markdownApi";
-import moment from "moment";
+import ArticleList from "../components/cards/articleList";
 
 //https://codepen.io/andybarefoot/pen/wrXvLj
 //https://www.w3schools.com/cssref/sel_selection.asp
 // https://stackoverflow.com/questions/16094837/what-is-the-browser-default-background-color-when-selecting-text
 
-const tasks = {
-  backlog: [
-    { id: 1, task: "Make data governance notes" },
-    { id: 2, task: "Pass the Azure Developer Test" },
-    { id: 3, task: "Setup Spark/PySpark Docker env" },
-  ],
-  active: [{ id: 1, task: "Complete the 'onboarding' guide" }],
-  complete: [{ id: 2, task: "Complete Analysts Journal" }],
-};
-
 export default function Home({ allPosts }) {
-  const article = allPosts[0]
-  const articles = allPosts.slice(0,4)
-  console.log(moment().format(article.date))
-  console.log(articles)
+  const article = allPosts[0];
+  const articles = allPosts.slice(0, 4);
+  articles.forEach((element, index) =>
+    console.log(new Date(element.date), index, element.title, element.image)
+  );
+
   return (
     <div>
       <Head>
@@ -74,20 +71,32 @@ export default function Home({ allPosts }) {
         </p>
       </div>
       <Section>
-        <div>
-          <div>
-            <p>
-              Interested in Business Analysis, Product Development or Service
-              Design?Trying to improve your overall game?
-            </p>
-            <p>Interested in learning more about </p>
-          </div>
-        </div>
-      </Section>
-      <Section>
         <div className={styles.grid}>
-          <ArticleCard page={article.slug} title={article.title} date={article.date} />
-
+          <div style={{ padding: "16px", margin: "10px" }}>
+            <HoverCard
+              one={
+                "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Emilio4by3.jpg"
+              }
+              two={
+                "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Rohit4by3.PNG"
+              }
+            />
+          </div>
+          <div className={styles.home_text}>
+            <p className={styles.home_title}>
+              Hi, welcome to the Analysts Journal.
+            </p>
+            <p>
+              A small corner of the internet that provides free, re-suable
+              information for anyone interested in <b>Product Development</b> or{" "}
+              <b>Service Design</b>.
+            </p>
+            {/* <p>
+              Interested in learning more about Product Development or Service
+              Design?
+            </p>
+            <p>Or perhaps you're trying to improve the overall game of your product?</p> */}
+          </div>
         </div>
       </Section>
       <Section>
@@ -137,50 +146,46 @@ export default function Home({ allPosts }) {
       </Section>
       <Section>
         <div className={styles.description}>
-          <h4 style={{ display: "inline-block" }}>Kanban</h4>
-          <div style={{ display: "inline-block" }}>
-            <SmallBtn background={"rgba(255, 193, 7, 0.4)"} color={"#231E39"}>
-              📡 Live
-            </SmallBtn>
-          </div>
+          <h4>Recent posts 🚀</h4>
         </div>
-        <div className={styles.kanban_grid}>
-          <div className={styles.kanban_card}>
-            <h4
-              style={{
-                background: "rgb(50, 54, 57)",
-                color: "rgb(251, 251, 249)",
-              }}
-            >
-              ⌛ Upcoming
-            </h4>
-            <ul>
-              {tasks.backlog.map((backlog) => (
-                <li key={backlog.id} className={styles.task_item}>
-                  <p>{backlog.task}</p>
-                </li>
-              ))}
-            </ul>
+        <div>
+          {articles.map((element) => (
+            <ArticleList
+              page={element.slug}
+              title={element.title}
+              date={element.date}
+            />
+          ))}
+        </div>
+        {/* <div className={styles.grid}>
+          {articles.map((element) => (
+            <ArticleCard
+              page={element.slug}
+              title={element.title}
+              date={element.date}
+              image={element.image}
+            />
+          ))}
+        </div> */}
+      </Section>
+      <Section>
+        <div className={styles.grid} style={{ marginTop: "50px" }}>
+          <div className={styles.services_text}>
+            <h1>
+              Are you developing a product or service? 
+            </h1>
+            <h1>
+              Trying to improve your overall game?
+            </h1>
           </div>
-          <div className={styles.kanban_card}>
-            <h4 style={{ background: "#77aaff" }}>✍ In Progress</h4>
-            <ul>
-              {tasks.active.map((active) => (
-                <li key={active.id} className={styles.task_item}>
-                  <p>{active.task}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.kanban_card}>
-            <h4 style={{ background: "#66bb6a" }}>✅ Complete</h4>
-            <ul>
-              {tasks.complete.map((complete) => (
-                <li key={complete.id} className={styles.task_item}>
-                  <p>{complete.task}</p>
-                </li>
-              ))}
-            </ul>
+          <div className={styles.services_text}>
+            <p>
+              We provide thought leadership, consulting and freelance services
+              for anyone passionate about product development, via our sister company: <b><a href="/">LondonDevs.dev</a></b>
+            </p>
+            <div className={styles.services_buttons}>
+              <SecondaryBtn>Contact us →</SecondaryBtn> 
+            </div>
           </div>
         </div>
       </Section>
@@ -189,7 +194,15 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["title", "date", "slug"]);
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "image",
+    "tags",
+    "author",
+    "tags",
+    "slug",
+  ]);
 
   return {
     props: { allPosts },

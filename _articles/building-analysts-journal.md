@@ -1,8 +1,13 @@
 ---
 title: 'Building Analysts Journal with Next.js'
-date: '17 Feb 2022'
+date: '2022-02-17'
+image: 'https://source.unsplash.com/random/300%C3%97300?vercel'
+tags:
+  type: Tutorial
+  topic: Web Development
 author:
   name: Emilio D'Souza
+  link: '/about/emilio'
 ---
 
 ## Next.js Scaffold

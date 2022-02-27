@@ -1,8 +1,13 @@
 ---
 title: 'My 2022 backlog'
 date: '2022-02-09'
+image: 'https://source.unsplash.com/random/300%C3%97300?planning'
+tags:
+  type: Blog
+  topic: Personal
 author:
   name: Emilio D'Souza
+  link: '/about/emilio'
 ---
 
 ## 2022 Objectives

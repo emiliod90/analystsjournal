@@ -28,6 +28,7 @@ export default function Footer() {
 
         <ul>
           <li className={styles.footer_links}><Link href={"/about"}><a>About</a></Link></li>
+          <li className={styles.footer_links}><Link href={"/blog"}><a>Blog</a></Link></li>
           <li className={styles.footer_links}><Link href={"/resources"}><a>Resources</a></Link></li>
           <li className={styles.footer_links}><Link href={"/projects"}><a>Projects</a></Link></li>
         </ul>

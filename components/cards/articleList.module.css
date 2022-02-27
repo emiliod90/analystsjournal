@@ -1,0 +1,12 @@
+.article {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.13);
+  border-radius: 4px;
+  line-height: 1.6;
+  padding: 0.75rem 0;
+}
+.card_title {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}

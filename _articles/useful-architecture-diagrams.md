@@ -1,8 +1,13 @@
 ---
-title: "Very useful enterprise architecture diagrams"
-date: "17 Feb 2022"
+title: "Useful enterprise architecture diagrams"
+date: "2022-02-18"
+image: 'https://source.unsplash.com/random/300%C3%97300?architecture'
+tags:
+  type: Guide
+  topic: Diagrams
 author:
   name: Emilio D'Souza
+  link: '/about/emilio'
 ---
 
 ## Structural (Architecture) Diagrams

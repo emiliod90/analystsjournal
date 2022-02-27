@@ -1,8 +1,13 @@
 ---
 title: 'Introduction to Data Governance - Notes'
+image: 'https://source.unsplash.com/random/300%C3%97300?data'
+tags:
+  type: Notes
+  topic: Data Governance
 date: '2022-02-15'
 author:
   name: Emilio D'Souza
+  link: '/about/emilio'
 ---
 
 ## Introduction to Data Governance Course

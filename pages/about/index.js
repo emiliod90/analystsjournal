@@ -1,11 +1,22 @@
 import styles from "../../styles/about.module.css";
 import Image from "next/image";
 import AboutImage from "../../public/welcomeClip.png";
+import { SmallBtn } from "../../components/buttons/buttons";
 import HoverCard from "../../components/cards/hoverCard";
 import TitleCard from "../../components/cards/titleCard";
 import Section from "../../components/section";
 //https://codepen.io/2975/pen/QrZpoa
 //https://freefrontend.com/css-profile-cards/
+
+const tasks = {
+  backlog: [
+    { id: 1, task: "Make data governance notes" },
+    { id: 2, task: "Pass the Azure Developer Test" },
+    { id: 3, task: "Setup Spark/PySpark Docker env" },
+  ],
+  active: [{ id: 1, task: "Complete the 'onboarding' guide" }],
+  complete: [{ id: 2, task: "Complete Analysts Journal" }],
+};
 
 function About() {
   return (
@@ -61,6 +72,55 @@ function About() {
             building applications. If you're in London and/or fancy a chat about
             almost anything, let's connect below.
           </p>
+        </div>
+      </Section>
+      <Section>
+        <div className={styles.description}>
+          <h4 style={{ display: "inline-block" }}>Kanban</h4>
+          <div style={{ display: "inline-block" }}>
+            <SmallBtn background={"rgba(255, 193, 7, 0.4)"} color={"#231E39"}>
+              📡 Live
+            </SmallBtn>
+          </div>
+        </div>
+        <div className={styles.kanban_grid}>
+          <div className={styles.kanban_card}>
+            <h4
+              style={{
+                background: "rgb(50, 54, 57)",
+                color: "rgb(251, 251, 249)",
+              }}
+            >
+              ⌛ Upcoming
+            </h4>
+            <ul>
+              {tasks.backlog.map((backlog) => (
+                <li key={backlog.id} className={styles.task_item}>
+                  <p>{backlog.task}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.kanban_card}>
+            <h4 style={{ background: "#77aaff" }}>✍ In Progress</h4>
+            <ul>
+              {tasks.active.map((active) => (
+                <li key={active.id} className={styles.task_item}>
+                  <p>{active.task}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.kanban_card}>
+            <h4 style={{ background: "#66bb6a" }}>✅ Complete</h4>
+            <ul>
+              {tasks.complete.map((complete) => (
+                <li key={complete.id} className={styles.task_item}>
+                  <p>{complete.task}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Section>
       <Section>
