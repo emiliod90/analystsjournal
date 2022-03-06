@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Image from "next/image";
+import ServicesImg from "../public/images/services-img-uriel-soberanes.jpg";
 import {
   PrimaryBtn,
   SecondaryBtn,
@@ -18,11 +20,11 @@ import ArticleList from "../components/cards/articleList";
 // https://stackoverflow.com/questions/16094837/what-is-the-browser-default-background-color-when-selecting-text
 
 export default function Home({ allPosts }) {
-  const article = allPosts[0];
+  // const article = allPosts[0];
   const articles = allPosts.slice(0, 4);
-  articles.forEach((element, index) =>
-    console.log(new Date(element.date), index, element.title, element.image)
-  );
+  // articles.forEach((element, index) =>
+  //   console.log(new Date(element.date), index, element.title, element.image)
+  // );
 
   return (
     <div>
@@ -87,104 +89,147 @@ export default function Home({ allPosts }) {
               Hi, welcome to the Analysts Journal.
             </p>
             <p>
-              A small corner of the internet that provides free, re-suable
-              information for anyone interested in <b>Product Development</b> or{" "}
+              A small corner of the internet that provides free information for
+              anyone interested in <b>Product Development</b> or{" "}
               <b>Service Design</b>.
             </p>
-            {/* <p>
-              Interested in learning more about Product Development or Service
-              Design?
-            </p>
-            <p>Or perhaps you're trying to improve the overall game of your product?</p> */}
           </div>
+        </div>
+      </Section>
+      <Section amount={0.3}>
+        <div className={styles.description}>
+          <h4 style={{ display: "inline-block" }}>Resources & Articles</h4>
+        </div>
+        <div className={styles.grid}>
+          <Link href={"/blog"}>
+            <a className={styles.card}>
+              <div className={styles.card_overlay}>
+                <h2>Blog &rarr;</h2>
+                <p>
+                  Curated articles and videos for analysts and developers to
+                  improve their craft
+                </p>
+              </div>
+              <div
+                className={styles.card_inner}
+                style={{
+                  background:
+                    "url(https://source.unsplash.com/random/?mountains) center no-repeat",
+                }}
+              >
+                <h1>Start reading </h1>
+              </div>
+            </a>
+          </Link>
+          <Link href={"/templates"}>
+            <a className={styles.card}>
+              <div className={styles.card_overlay}>
+                <h2>Templates &rarr;</h2>
+                <p>
+                  Collection of useful notes, templates, guides and cheatsheets
+                </p>
+              </div>
+              <div
+                className={styles.card_inner}
+                style={{
+                  background:
+                    "url(https://source.unsplash.com/random/640x640/?notes) center no-repeat",
+                }}
+              >
+                <h1>Start using </h1>
+              </div>
+            </a>
+          </Link>
+          <Link href={"/projects"}>
+            <a className={styles.card}>
+              <div className={styles.card_overlay}>
+                <h2>Projects &rarr;</h2>
+                <p>
+                  Projects inspired by real client problems that form part of
+                  the tutorials
+                </p>
+              </div>
+              <div
+                className={styles.card_inner}
+                style={{
+                  background:
+                    "url(https://source.unsplash.com/random/640x426/?coding) center no-repeat",
+                }}
+              >
+                <h1>View all </h1>
+              </div>
+            </a>
+          </Link>
+          <Link href={"/about"}>
+            <a className={styles.card}>
+              <div className={styles.card_overlay}>
+                <h2>About &rarr;</h2>
+                <p>
+                  Tracking personal milestones and other musings, blog style
+                </p>
+              </div>
+              <div
+                className={styles.card_inner}
+                style={{
+                  background:
+                    "url(https://source.unsplash.com/random/640x426/?people) center no-repeat",
+                }}
+              >
+                <h1>Who we are</h1>
+              </div>
+            </a>
+          </Link>
         </div>
       </Section>
       <Section>
         <div className={styles.description}>
-          <h4 style={{ display: "inline-block" }}>Resources & Articles</h4>
+          <h4 style={{ display: "inline-block" }}>Recent posts</h4>
           <div style={{ display: "inline-block" }}>
             <SmallBtn>
-              <Link href={"/resources"}>
+              <Link href={"/templates"}>
                 <a>view all &rarr;</a>
               </Link>
             </SmallBtn>
           </div>
         </div>
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Tutorials &rarr;</h2>
-            <p>
-              Curated articles and videos for analysts and developers to improve
-              their craft
-            </p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Templates &rarr;</h2>
-            <p>Collection of useful notes, templates, guides and cheatsheets</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Projects &rarr;</h2>
-            <p>
-              Mock projects inspired by real client problems that form part of
-              the tutorials
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Journal &rarr;</h2>
-            <p>Tracking personal milestones and other musings, blog style</p>
-          </a>
-        </div>
-      </Section>
-      <Section>
-        <div className={styles.description}>
-          <h4>Recent posts 🚀</h4>
-        </div>
         <div>
-          {articles.map((element) => (
+          {articles.map((element, index) => (
             <ArticleList
+              key={index}
               page={element.slug}
               title={element.title}
               date={element.date}
+              tags={element.tags}
             />
           ))}
         </div>
-        {/* <div className={styles.grid}>
-          {articles.map((element) => (
-            <ArticleCard
-              page={element.slug}
-              title={element.title}
-              date={element.date}
-              image={element.image}
-            />
-          ))}
-        </div> */}
       </Section>
-      <Section>
-        <div className={styles.grid} style={{ marginTop: "50px" }}>
-          <div className={styles.services_text}>
-            <h1>
-              Are you developing a product or service? 
-            </h1>
-            <h1>
-              Trying to improve your overall game?
-            </h1>
+      <Section amount={0.4}>
+        <div className={styles.description}>
+          <h4>Support</h4>
+        </div>
+        <div className={styles.grid}>
+          <div className={styles.services_image}>
+            <Image
+              src={ServicesImg}
+              width={320}
+              height={480}
+              className={styles.seim}
+            />
           </div>
           <div className={styles.services_text}>
+            <p>Are you developing a product or service?</p>
+            <p>Trying to improve your overall game?</p>
             <p>
               We provide thought leadership, consulting and freelance services
-              for anyone passionate about product development, via our sister company: <b><a href="/">LondonDevs.dev</a></b>
+              for anyone passionate about product development, via our sister
+              company:{" "}
+              <b>
+                <a href="/">LondonDevs.dev</a>
+              </b>
             </p>
             <div className={styles.services_buttons}>
-              <SecondaryBtn>Contact us →</SecondaryBtn> 
+              <SecondaryBtn>Contact us →</SecondaryBtn>
             </div>
           </div>
         </div>
@@ -200,7 +245,6 @@ export async function getStaticProps() {
     "image",
     "tags",
     "author",
-    "tags",
     "slug",
   ]);
 

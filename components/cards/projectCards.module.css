@@ -1,0 +1,25 @@
+.large_card {
+  margin: 10px 5px;
+  padding: 20px;
+  width: 320px;
+  height: 520px;
+  position: relative;
+  border-radius: 6px;
+  text-align: center;
+  display: grid;
+  align-items: end;
+}
+
+.card_title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.card_subtext {
+  text-align: justify;
+  font-size: 1.1rem;
+  padding-bottom: 40px;
+  height: 110px;
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useMemo } from "react";
+import { useState } from "react";
 import styles from "./layout.module.css";
 import { ThemeContext, themes } from "../../context/themeContext";
 import Header from "./header";
@@ -14,8 +14,8 @@ export default function Layout({ children }) {
   const toggleTheme = () => {
     if (theme === themes.LightTheme) {
       setTheme(themes.DarkTheme);
-    } else if (theme == themes.DarkTheme) {
-      setTheme(themes.BlueTheme);
+    // } else if (theme == themes.DarkTheme) {
+    //   setTheme(themes.BlueTheme);
     } else {
       setTheme(themes.LightTheme);
     }

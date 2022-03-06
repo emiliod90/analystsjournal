@@ -4,7 +4,7 @@ date: '2022-02-17'
 image: 'https://source.unsplash.com/random/300%C3%97300?vercel'
 tags:
   type: Tutorial
-  topic: Web Development
+  topic: Web
 author:
   name: Emilio D'Souza
   link: '/about/emilio'

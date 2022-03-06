@@ -1,10 +1,11 @@
 // https://www.youtube.com/watch?v=L6iIBkrMFUE&ab_channel=ReactNativeSchool
 // https://css-tricks.com/theming-and-theme-switching-with-react-and-styled-components/
 
-import { createContext, useState } from "react";
+import { createContext } from "react";
 
 export const themes = {
   LightTheme: {
+    title: "light",
     background: {
       shadeOne: "#f8f8f4",
       shadeTwo: "#f2f2f2",
@@ -24,6 +25,7 @@ export const themes = {
     },
   },
   DarkTheme: {
+    title: "dark",
     background: "#1d1f21",
     background: {
       shadeOne: "#202124",
@@ -44,6 +46,7 @@ export const themes = {
     },
   },
   BlueTheme: {
+    title: "blue",
     background: {
       shadeOne: "#7BA2E8",
       shadeTwo: "#7BA2E8",

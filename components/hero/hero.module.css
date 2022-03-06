@@ -1,0 +1,42 @@
+.hero {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-top: 140px;
+  margin-bottom: 100px;
+}
+
+.cover {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(2, 150px); */
+}
+
+.box_one {
+  display: none;
+}
+
+.box_two {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .cover {
+    grid-template-columns: 225px 1fr;
+  }
+  .box_two {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cover {
+    /* display: flex; */
+    grid-template-columns: 225px 225px 1fr;
+  }
+
+  .box_one {
+    display: block;
+  }
+}

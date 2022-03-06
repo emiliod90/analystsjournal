@@ -28,14 +28,14 @@ function SecondaryBtn({ children }) {
   );
 }
 
-function TertiaryBtn({ children }) {
+function TertiaryBtn({ children, color }) {
   return (
     <div
       className={styles.button}
       style={{
         background: "transparent",
         border: "1px solid #03BFCB",
-        color: "#02899C",
+        color: color,
       }}
     >
       {children}

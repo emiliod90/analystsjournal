@@ -5,6 +5,7 @@ import { SmallBtn } from "../../components/buttons/buttons";
 import HoverCard from "../../components/cards/hoverCard";
 import TitleCard from "../../components/cards/titleCard";
 import Section from "../../components/section";
+import Hero from "../../components/hero";
 //https://codepen.io/2975/pen/QrZpoa
 //https://freefrontend.com/css-profile-cards/
 
@@ -21,37 +22,29 @@ const tasks = {
 function About() {
   return (
     <>
-      <div className={styles.about_card}>
-        <div className={styles.cover}>
-          <HoverCard
-            one={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/laura-chouette-14u6sJ6KiyI-unsplash.jpg"
-            }
-            two={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/luke-stackpoole-mOEqOtmuPG8-unsplash.jpg"
-            }
-          />
-          <HoverCard
-            one={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/eric-dekker-zP4_qK9FEQA-unsplash.jpg"
-            }
-            two={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/nathan-dumlao-N3btvQ51dL0-unsplash.jpg"
-            }
-          />
-          <TitleCard
-            title={"About"}
-            one={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/rizky-subagja-ZfVEWZTHs8M-unsplash.jpg"
-            }
-            two={
-              "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/roland-denes-9cvazp2FUzc-unsplash.jpg"
-            }
-          />
-        </div>
-      </div>
+      <Hero
+        title={"About"}
+        one={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/laura-chouette-14u6sJ6KiyI-unsplash.jpg"
+        }
+        two={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/luke-stackpoole-mOEqOtmuPG8-unsplash.jpg"
+        }
+        three={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/eric-dekker-zP4_qK9FEQA-unsplash.jpg"
+        }
+        four={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/nathan-dumlao-N3btvQ51dL0-unsplash.jpg"
+        }
+        five={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/rizky-subagja-ZfVEWZTHs8M-unsplash.jpg"
+        }
+        six={
+          "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/roland-denes-9cvazp2FUzc-unsplash.jpg"
+        }
+      />
       <Section>
-        <div>
+        <div className={styles.text}>
           <h2>The Analysts Journal</h2>
           <p>
             The Analysts Journal is a collection of notes, templates and guides
@@ -124,48 +117,48 @@ function About() {
         </div>
       </Section>
       <Section>
-      <div className={styles.about_card}>
-        <div className={styles.cover}>
-          <div className={styles.image}>
-            <Image
-              src="https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Rohit4by3.PNG"
-              alt="Picture of the author"
-              width={225}
-              height={300}
-              className={styles.about_profile_photo}
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
-            />
-            <div className={styles.fade_box}>
-              <div className={styles.fade_box_text}>
-                <p className={styles.author_name}>Rohit Bakshi</p>
-                <p className={styles.author_title}>
-                  <b>Product Architect</b>
-                </p>
+        <div className={styles.about_card}>
+          <div className={styles.cover}>
+            <div className={styles.image}>
+              <Image
+                src="https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Rohit4by3.PNG"
+                alt="Picture of the author"
+                width={225}
+                height={300}
+                className={styles.about_profile_photo}
+                // blurDataURL="data:..." automatically provided
+                // placeholder="blur" // Optional blur-up while loading
+              />
+              <div className={styles.fade_box}>
+                <div className={styles.fade_box_text}>
+                  <p className={styles.author_name}>Rohit Bakshi</p>
+                  <p className={styles.author_title}>
+                    <b>Product Architect</b>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={styles.image}>
-            <Image
-              src="https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/emilio_shades.jpg"
-              alt="Picture of the author"
-              width={225}
-              height={300}
-              className={styles.about_profile_photo}
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
-            />
-            <div className={styles.fade_box}>
-              <div className={styles.fade_box_text}>
-                <p className={styles.author_name}>Emilio D'Souza</p>
-                <p className={styles.author_title}>
-                  <b>Digital Craftsman</b>
-                </p>
+            <div className={styles.image}>
+              <Image
+                src="https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/emilio_shades.jpg"
+                alt="Picture of the author"
+                width={225}
+                height={300}
+                className={styles.about_profile_photo}
+                // blurDataURL="data:..." automatically provided
+                // placeholder="blur" // Optional blur-up while loading
+              />
+              <div className={styles.fade_box}>
+                <div className={styles.fade_box_text}>
+                  <p className={styles.author_name}>Emilio D'Souza</p>
+                  <p className={styles.author_title}>
+                    <b>Digital Craftsman</b>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </Section>
     </>
   );

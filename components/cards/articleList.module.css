@@ -5,8 +5,21 @@
   border-radius: 4px;
   line-height: 1.6;
   padding: 0.75rem 0;
+  width: 320px;
 }
 .card_title {
   font-size: 1.15rem;
   line-height: 1.5;
+}
+
+.card_subtext {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tags {
+  background-color: #f6f3ea;
+  padding: 0 5px;
+  border-radius: 6px;
+  font-size: 14px;
 }

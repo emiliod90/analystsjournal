@@ -1,14 +1,14 @@
 .card_container {
-  height: 200px;
-  width: 150px;
+  height: 300px;
+  width: 225px;
   position: relative;
 }
 
 .image_one,
 .image_two {
   border-radius: 24px;
-  height: 200px;
-  width: 150px;
+  height: 300px;
+  width: 225px;
 }
 
 @media screen and (min-width: 768px) {

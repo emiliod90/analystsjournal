@@ -1,13 +1,18 @@
 import styles from "./hoverCard.module.css";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-function HoverCard({ one, two, theme }) {
+function HoverCard({ one, two }) {
   return (
-    <div className={styles.card_container}>
+    <motion.div
+      className={styles.card_container}
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={({ duration: 0.8 }, 0.1)}
+    >
       {one ? (
         <img
           src={one}
-          alt="Picture of the author"
+          alt={one}
           width={225}
           height={300}
           className={styles.image_one}
@@ -21,7 +26,7 @@ function HoverCard({ one, two, theme }) {
       {two ? (
         <img
           src={two}
-          alt="Picture of the author"
+          alt={two}
           width={225}
           height={300}
           className={styles.image_two}
@@ -32,7 +37,7 @@ function HoverCard({ one, two, theme }) {
           className={styles.card_two}
         ></div>
       )}
-    </div>
+    </motion.div>
   );
 }
 

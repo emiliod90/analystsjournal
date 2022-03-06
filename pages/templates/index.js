@@ -42,7 +42,6 @@ function Resources() {
         <Tag title={"Templates"} background={"#fad089"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
             viewBox="0 0 512 512"
             width="20"
             height="20"
@@ -54,7 +53,6 @@ function Resources() {
         <Tag title={"Notes"} background={"#3a3f82"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
             viewBox="0 0 512 512"
             width="20"
             height="20"
@@ -68,7 +66,6 @@ function Resources() {
         <Tag title={"Journal"} background={"#fe9c5b"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
             viewBox="0 0 512 512"
             width="20"
             height="20"
@@ -80,9 +77,7 @@ function Resources() {
         </Tag>
         <h4>All Resources</h4>
         <input
-          id="search"
           type="search"
-          class="search-input"
           placeholder="Begin typing to search..."
           value=""
         ></input>

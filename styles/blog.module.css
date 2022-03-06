@@ -1,0 +1,42 @@
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  min-height: 500px;
+}
+
+.description {
+  text-align: center;
+  margin: 3rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.input {
+  width: 320px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.tag_group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tags {
+  background-color: #f6f3ea;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.tags:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
