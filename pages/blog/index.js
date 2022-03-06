@@ -8,6 +8,7 @@ import { useState } from "react";
 //https://www.youtube.com/watch?v=mZvKPtH9Fzo&ab_channel=PedroTech
 //https://www.w3schools.com/jsref/jsref_includes.asp
 // https://codeburst.io/javascript-array-distinct-5edc93501dc4
+//https://stackoverflow.com/questions/69959451/react-toggle-style-on-mapped-element-on-click
 
 export default function Blog({ allPosts }) {
   const articles = allPosts;

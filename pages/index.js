@@ -186,7 +186,7 @@ export default function Home({ allPosts }) {
           <h4 style={{ display: "inline-block" }}>Recent posts</h4>
           <div style={{ display: "inline-block" }}>
             <SmallBtn>
-              <Link href={"/templates"}>
+              <Link href={"/blog"}>
                 <a>view all &rarr;</a>
               </Link>
             </SmallBtn>
