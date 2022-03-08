@@ -1,7 +1,7 @@
 import Hero from "../../components/hero";
 import { getAllPosts } from "../../utils/markdownApi";
 import { motion } from "framer-motion";
-import ArticleList from "../../components/cards/articleList";
+import ArticleList from "../../components/lists/articleList";
 import styles from "../../styles/blog.module.css";
 import { useState } from "react";
 
@@ -12,23 +12,23 @@ import { useState } from "react";
 
 export default function Blog({ allPosts }) {
   const articles = allPosts;
-  const [searchTerm, setSearchTerm] = useState("");
   const distinctTags = [...new Set(articles.map((x) => x.tags.topic))];
-
+  const [searchTerm, setSearchTerm] = useState("");
   const [toggle, toggleSetter] = useState("#f6f3ea");
-  const [activeItem, setActiveItem] = useState(-1)
+  const [activeItem, setActiveItem] = useState(-1);
+  const [switchArticle, setSwitchArticle] = useState(true);
 
   function toggleSearchTerm(element, index) {
     if (searchTerm === "") {
       setSearchTerm(element.toLowerCase());
       setActiveItem(index);
       toggleSetter("rgba(0, 0, 0, 0.1)");
-      console.log(element, index)
+      console.log(element, index);
     } else if (searchTerm === element.toLowerCase()) {
       setSearchTerm("");
       setActiveItem(-1);
       toggleSetter("#f6f3ea");
-      console.log(element, index)
+      console.log(element, index);
     }
   }
 
@@ -56,7 +56,7 @@ export default function Blog({ allPosts }) {
         }
       />
 
-      <div className={styles.description}>
+      <div className={styles.flex_inline}>
         <input
           value={searchTerm}
           className={styles.input}
@@ -72,7 +72,7 @@ export default function Blog({ allPosts }) {
           <div
             key={index}
             className={styles.tags}
-            style={{background: (activeItem === index) ? toggle : "#f6f3ea"}}
+            style={{ background: activeItem === index ? toggle : "#f6f3ea" }}
             onClick={() => toggleSearchTerm(element, index)}
           >
             <p>{element}</p>
@@ -80,7 +80,7 @@ export default function Blog({ allPosts }) {
         ))}
       </div>
       <section className={styles.section}>
-        <div>
+        <div className={styles.article_list}>
           {articles
             .filter((element) => {
               if (searchTerm === "") {

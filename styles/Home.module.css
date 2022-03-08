@@ -192,6 +192,12 @@
   max-width: 770px;
 }
 
+.article_list {
+  display: block;
+  max-width: 550px;
+  margin: auto;
+}
+
 .card {
   margin: 1rem;
   text-align: left;

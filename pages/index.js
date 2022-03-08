@@ -10,10 +10,9 @@ import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import Section from "../components/section";
 import Link from "next/link";
-import ArticleCard from "../components/cards/articleCard";
 import HoverCard from "../components/cards/hoverCard";
 import { getAllPosts } from "../utils/markdownApi";
-import ArticleList from "../components/cards/articleList";
+import ArticleList from "../components/lists/articleList";
 
 //https://codepen.io/andybarefoot/pen/wrXvLj
 //https://www.w3schools.com/cssref/sel_selection.asp
@@ -192,7 +191,7 @@ export default function Home({ allPosts }) {
             </SmallBtn>
           </div>
         </div>
-        <div>
+        <div className={styles.article_list}>
           {articles.map((element, index) => (
             <ArticleList
               key={index}

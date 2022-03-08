@@ -116,7 +116,7 @@ function About() {
           </div>
         </div>
       </Section>
-      <Section>
+      {/* <Section>
         <div className={styles.about_card}>
           <div className={styles.cover}>
             <div className={styles.image}>
@@ -159,7 +159,7 @@ function About() {
             </div>
           </div>
         </div>
-      </Section>
+      </Section> */}
     </>
   );
 }

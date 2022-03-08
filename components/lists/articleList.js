@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./articleList.module.css";
 
-export default function ArticleList({ page, title, date, image, tags }) {
+export default function ArticleList({ page, title, date, tags }) {
   const dateObject = new Date(date);
   const months = [
     "Jan",
