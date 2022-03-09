@@ -3,8 +3,10 @@ import Link from "next/link";
 import Hero from "../../components/hero";
 import Section from "../../components/section";
 import styles from "../../styles/templates.module.css";
+import templates_json from "./templates.json";
 
 export default function Templates() {
+  const templates = templates_json;
   return (
     <>
       <Hero
@@ -30,72 +32,14 @@ export default function Templates() {
       />
 
       <div className={styles.template_grid}>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Plotly & Dash</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>FastAPI</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Google Solutions for Web Analytics</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Requirements & Test cases</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>From User Journeys to Experience Design</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Star Schema</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Numpy, Pandas & Dask</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Go-to-Market Strategy</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Cloud Deployment Intro for Analysts</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>Effective Process & Data Modelling</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
-        <article className={styles.template_card}>
-          <a href="#" className={styles.card_inner}>
-            <h2>SQL and Relational Databases</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </a>
-        </article>
+        {templates.map((element, index) => (
+          <article key={index} className={styles.template_card}>
+            <a href="#" className={styles.card_inner}>
+              <h2>{element.name}</h2>
+              <p>{element.des}</p>
+            </a>
+          </article>
+        ))}
       </div>
 
       {/* <Tag title={"Tutorials"} background={"rgba(51, 181, 229, 0.4)"}>

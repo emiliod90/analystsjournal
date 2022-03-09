@@ -221,10 +221,9 @@ export default function Home({ allPosts }) {
             <p>Trying to improve your overall game?</p>
             <p>
               We provide thought leadership, consulting and freelance services
-              for anyone passionate about product development, via our sister
-              company:{" "}
+              for anyone passionate about product development. Visit us @
               <b>
-                <a href="/">LondonDevs.dev</a>
+                <a href="/"> LondonDevs.dev</a>
               </b>
             </p>
             <div className={styles.services_buttons}>

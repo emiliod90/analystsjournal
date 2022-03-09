@@ -1,4 +1,141 @@
 
-{
-  
-}
+[
+    {
+        "name": "UML Diagrams",
+        "des": "Examples of different uml diagrams spanning different use-cases",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Onboarding Playbook",
+        "des": "A guide for a consultant or analyst to hit the ground running on their latest assignment",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Requirements Traceability Matrix",
+        "des": "A requirements catalogue that aligns to test cases, including stakeholder ownership and traceability to other artifacts",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "BA Bible",
+        "des": "The Business Analysis 'Bible' authored by Rohit Bakshi and Emilio D'souza (WIP)",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Go-to-Market Stragegy",
+        "des": "A short and succinct playbook for devising a go-to-market strategy",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "SQL Cheatsheet",
+        "des": "Cheatsheet of common SQL database queries for T-SQL (Microsoft) and PostgreSQL (open source)",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Numpy & Pandas Cheatsheet",
+        "des": "Cheatsheet of common python queries using the Numpy and Pandas API",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Business Model Canvas",
+        "des": "A useful way to illustrate an organisations key strategic areas and capabilities",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Persona + Empathy Map",
+        "des": "Illustate who your customers are, incl. their needs and expectations",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Wireframe Examples",
+        "des": "A few examples of wireframes put together from past projects and client work",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "BPMN Diagrams",
+        "des": "Examples of different BPMN Process Flow + Swim Lane diagrams spanning different domains",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Problem Solving Techniques",
+        "des": "Useful problem solving and analysis techniques collated from multiple domains",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Agile Blueprint",
+        "des": "Cheatsheet of key terms and areas in Agile",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Customer Journey Maps",
+        "des": "Illustrate the customer journey when using your service or product with this template",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Design Sprint Process",
+        "des": "One-pager on the design sprint process",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Resource Capability Matrix",
+        "des": "A template to illustate and align your employees skills to a business capability and/or objective",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Business Case Template",
+        "des": "Minimalist template for developing and documenting a business case",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Prioritisation Techniques",
+        "des": "Includes Impact/Likelihood Matrix, Value/Effort matrix and relative scoring methods",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Consultants Impact Guide",
+        "des": "Useful consultant techniques from multiple sources collated into a short pocket guide",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Key Project Delivery Artifacts",
+        "des": "Important artifacts that help track and document the delivery of a project",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Key Product Management Artifacts",
+        "des": "Important artifacts that help track and document the delivery of a product",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "Data Model Examples",
+        "des": "Examples of conceptual and logical data models spanning different use-cases",
+        "url": "",
+        "tag": ""
+    },
+    {
+        "name": "BDD Scenarios Template",
+        "des": "A template for documenting the scenarios for the behaviour of a system to achieve the requirement/user story",
+        "url": "",
+        "tag": ""
+    }
+]
