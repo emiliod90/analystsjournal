@@ -79,7 +79,7 @@ export default function Home({ allPosts }) {
                 "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Emilio4by3.jpg"
               }
               two={
-                "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Rohit4by3.PNG"
+                "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Emilio4by3.jpg"
               }
             />
           </div>
