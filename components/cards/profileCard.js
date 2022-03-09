@@ -2,11 +2,11 @@ import styles from "./profileCard.module.css";
 import { PrimaryBtn, SecondaryBtn, TertiaryBtn } from "../buttons/buttons";
 //https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx
 
-function ProfileCard({ name, image, location, title, experiences, linkedin }) {
+function ProfileCard({ name, image, location, title, experiences, linkedin, colorOne, colorTwo }) {
   return (
     <div className={styles.card_container}>
       <div className={styles.card}>
-        <div className={styles.card_upper}>
+        <div className={styles.card_upper} style={{backgroundColor: colorOne}}>
           {image ? (
             <img
               className="round"
@@ -29,10 +29,10 @@ function ProfileCard({ name, image, location, title, experiences, linkedin }) {
               />
             </svg>
           )}
-          <h3>{name}</h3>
-          <h4 style={{ color: "#B3B8CD", fontSize: "12px" }}>{location}</h4>
+          <h2>{name}</h2>
+          <h4 style={{ fontSize: "12px" }}>{location}</h4>
           <br />
-          <p style={{ width: "75%", margin: "0 auto", color: "#B3B8CD" }}>
+          <p className={styles.card_title}>
             {title}
           </p>
           <br />
@@ -48,11 +48,11 @@ function ProfileCard({ name, image, location, title, experiences, linkedin }) {
           </div>
         </div>
         {experiences ? (
-          <div className={styles.card_lower}>
-            <h4 style={{ color: "#B3B8CD" }}>EXPERIENCE</h4>
-            <ul className={styles.skills_list} style={{ color: "#B3B8CD" }}>
+          <div className={styles.card_lower} style={{backgroundColor: colorTwo}}>
+            <h4 >EXPERIENCE</h4>
+            <ul className={styles.skills_list} >
               {experiences.map((experience) => (
-                <li>{experience}</li>
+                <li key={experience.id}>{experience}</li>
               ))}
             </ul>
           </div>

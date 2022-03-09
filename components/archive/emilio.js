@@ -1,7 +1,5 @@
-import Image from "next/image";
-import HoverCard from "../../components/cards/hoverCard";
-import ProfileCard from "../../components/cards/profileCard";
-import TitleCard from "../../components/cards/titleCard";
+import ProfileCard from "../cards/profileCard";
+import TitleCard from "../cards/titleCard";
 //https://freefrontend.com/css-profile-cards/
 function Emilio() {
   return (

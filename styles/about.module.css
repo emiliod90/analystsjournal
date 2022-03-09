@@ -5,6 +5,13 @@
   place-items: center;
 }
 
+.flex {
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .cover {
   display: grid;
   gap: 5px;

@@ -1,9 +1,8 @@
 import styles from "../../styles/about.module.css";
-import Image from "next/image";
-import AboutImage from "../../public/welcomeClip.png";
+// import Image from "next/image";
+// import AboutImage from "../../public/welcomeClip.png";
 import { SmallBtn } from "../../components/buttons/buttons";
-import HoverCard from "../../components/cards/hoverCard";
-import TitleCard from "../../components/cards/titleCard";
+import ProfileCard from "../../components/cards/profileCard";
 import Section from "../../components/section";
 import Hero from "../../components/hero";
 //https://codepen.io/2975/pen/QrZpoa
@@ -65,6 +64,53 @@ function About() {
             building applications. If you're in London and/or fancy a chat about
             almost anything, let's connect below.
           </p>
+        </div>
+      </Section>
+      <Section>
+        <div className={styles.flex}>
+        <ProfileCard
+          name={"Emilio D'Souza"}
+          image={
+            "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/Emilio2020.jpg"
+          }
+          location={"LONDON"}
+          title={"Digital Craftsman"}
+          linkedin={"https://www.linkedin.com/in/emilio-d-souza-52242064/"}
+          experiences={[
+            "Service Design",
+            "Solution Architecture",
+            "Business Analysis",
+            "Product Development",
+            "Agile",
+            "React",
+            "Python",
+            "Systems Analysis",
+          ]}
+          // colorOne="#dae2e4"
+          // colorTwo="#dae2e4"
+          colorOne="#e8f5e9"
+          colorTwo="#c8e6c9"
+        />
+        <ProfileCard
+          name={"Rohit Bakshi"}
+          image={
+            "https://storage.googleapis.com/emilio-public-bucket/AnalystsJournal/assets/images/misty.jpg"
+          }
+          location={"LONDON"}
+          title={"Product Architect"}
+          linkedin={"https://www.linkedin.com/in/rohit-bakshi-54854a134/"}
+          experiences={[
+            "Product Strategy",
+            "Product Management",
+            "Business Analysis",
+            "Market/User Research",
+            "CX/UX Design",
+            "Agile",
+            "Digital Transformation",
+          ]}
+          colorOne="#e0f2f1"
+          colorTwo="#b2dfdb"
+        />
         </div>
       </Section>
       <Section>
